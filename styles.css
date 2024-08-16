@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    font-family: 'Raleway', sans-serif;
+    user-select: none; /* Disable text selection */
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+#textContainer {
+    display: flex;
+    align-items: baseline;
+    transform: translateZ(0); /* Initial transform for 3D effect */
+    will-change: transform;
+    transition: all 0.5s ease-in-out;
+}
+
+#toggleText {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+}
+
+#period {
+    color: #007BFF; /* Blue color for the period */
+    font-size: 5.5rem; /* Slightly larger size for the period */
+    vertical-align: baseline; /* Aligns the period with the text */
+    border-radius: 50%; /* Rounded shape for the period */
+    transition: color 0.5s ease-in-out;
+    margin-left: 5px; /* Small spacing to improve visual alignment */
+    cursor: pointer;
+    display: none; /* Hidden until the text typing is complete */
+}
+
+#cursor {
+    font-size: 5rem;
+    color: #fff;
+    animation: blink 0.7s infinite;
+    margin-left: 5px; /* Aligns with the period */
+}
+
+#dateTimeContainer {
+    font-size: 5rem;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    display: flex;
+    align-items: baseline;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
